@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.CipherApp" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">#08080C</item>
-        <item name="android:statusBarColor">#08080C</item>
-        <item name="android:navigationBarColor">#08080C</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
+    <style name="Theme.CipherApp" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/accent_purple</item>
+        <item name="colorPrimaryVariant">#6200EA</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="android:windowBackground">@color/bg_deep</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
+        <item name="android:navigationBarColor">@color/bg_deep</item>
     </style>
 </resources>
