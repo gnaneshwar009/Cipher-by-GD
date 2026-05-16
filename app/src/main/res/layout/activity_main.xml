@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deep"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="40dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="&#128272;"
+                android:textSize="34sp"
+                android:gravity="center"
+                android:background="@drawable/bg_icon_badge"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CIPHER VAULT"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Substitution cipher  |  Secure  |  Offline"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <!-- TAB BAR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_card"
+            android:padding="4dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:id="@+id/tabEncrypt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_encrypt"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:id="@+id/tabEncryptText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ENCRYPT"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tabDecrypt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_off"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:id="@+id/tabDecryptText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DECRYPT"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ═══════ ENCRYPT SECTION ═══════ -->
+        <LinearLayout
+            android:id="@+id/encryptSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PLAINTEXT INPUT"
+                android:textColor="@color/accent_purple"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/encryptInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="130dp"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:paddingTop="14dp" android:paddingBottom="14dp"
+                android:background="@drawable/bg_input_purple"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp"
+                android:fontFamily="monospace"
+                android:hint="Enter text to encrypt..."
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:maxLines="8"/>
+
+            <!-- Divider -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginTop="18dp" android:layout_marginBottom="18dp">
+                <View android:layout_width="0dp" android:layout_height="1dp"
+                    android:layout_weight="1" android:background="#1E1E30"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="  v  ENCRYPTED  "
+                    android:textColor="@color/white" android:textSize="10sp"
+                    android:textStyle="bold" android:fontFamily="monospace"
+                    android:background="@drawable/bg_badge_purple"
+                    android:paddingLeft="14dp" android:paddingRight="14dp"
+                    android:paddingTop="7dp" android:paddingBottom="7dp"/>
+                <View android:layout_width="0dp" android:layout_height="1dp"
+                    android:layout_weight="1" android:background="#1E1E30"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CIPHERTEXT OUTPUT"
+                android:textColor="@color/accent_pink"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/encryptOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="130dp"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:paddingTop="14dp" android:paddingBottom="14dp"
+                android:background="@drawable/bg_output"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp"
+                android:fontFamily="monospace"
+                android:hint="Encrypted text appears here..."
+                android:gravity="top|start"
+                android:textIsSelectable="true"/>
+
+            <TextView
+                android:id="@+id/copyEncrypt"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="COPY TO CLIPBOARD"
+                android:textColor="@color/accent_purple"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:background="@drawable/bg_copy_purple"
+                android:clickable="true" android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- ═══════ DECRYPT SECTION ═══════ -->
+        <LinearLayout
+            android:id="@+id/decryptSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CIPHERTEXT INPUT"
+                android:textColor="@color/accent_cyan"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/decryptInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="130dp"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:paddingTop="14dp" android:paddingBottom="14dp"
+                android:background="@drawable/bg_input_cyan"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp"
+                android:fontFamily="monospace"
+                android:hint="Paste ciphertext to decrypt..."
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:maxLines="8"/>
+
+            <!-- Divider -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginTop="18dp" android:layout_marginBottom="18dp">
+                <View android:layout_width="0dp" android:layout_height="1dp"
+                    android:layout_weight="1" android:background="#1E1E30"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="  v  DECRYPTED  "
+                    android:textColor="@color/white" android:textSize="10sp"
+                    android:textStyle="bold" android:fontFamily="monospace"
+                    android:background="@drawable/bg_badge_cyan"
+                    android:paddingLeft="14dp" android:paddingRight="14dp"
+                    android:paddingTop="7dp" android:paddingBottom="7dp"/>
+                <View android:layout_width="0dp" android:layout_height="1dp"
+                    android:layout_weight="1" android:background="#1E1E30"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PLAINTEXT OUTPUT"
+                android:textColor="@color/accent_cyan"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/decryptOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="130dp"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:paddingTop="14dp" android:paddingBottom="14dp"
+                android:background="@drawable/bg_output"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp"
+                android:fontFamily="monospace"
+                android:hint="Decrypted text appears here..."
+                android:gravity="top|start"
+                android:textIsSelectable="true"/>
+
+            <TextView
+                android:id="@+id/copyDecrypt"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="COPY TO CLIPBOARD"
+                android:textColor="@color/accent_cyan"
+                android:textSize="11sp" android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:background="@drawable/bg_copy_cyan"
+                android:clickable="true" android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- FOOTER -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CVV Substitution Cipher  |  95-char keyspace"
+            android:textColor="#3A3A5C"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:layout_marginTop="32dp"/>
+
+    </LinearLayout>
+</ScrollView>
